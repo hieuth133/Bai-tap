@@ -30,6 +30,7 @@ function cau_a(){
         console.log(i);
     }
 }
+// cau_a();
 // b. n numbers, starting from 0, n entered by user
 function cau_b(){
     var number = window.prompt("Enter a number: ");
