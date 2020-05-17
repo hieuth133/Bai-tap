@@ -26,6 +26,7 @@ True of False
 // 3. Write a program to print out
 // a. 7 numbers, starting from 0 (no user input)
 function cau_a(){
+    console.clear();
     for(var i = 0; i < 7; i++) {
         console.log(i);
     }
@@ -33,6 +34,8 @@ function cau_a(){
 // cau_a();
 // b. n numbers, starting from 0, n entered by user
 function cau_b(){
+    console.clear();
+    alert("Print n numbers start from 0, n entered by user.")
     var number = window.prompt("Enter a number: ");
     if (!isNaN(number)){
         if (parseInt(number,10) < 0){
@@ -52,6 +55,8 @@ function cau_b(){
 }
 // c. A sequence of numbers, starting from 3, ending before n, n entered by user
 function cau_c(){
+    console.clear();
+    alert("A sequence of numbers, starting from 3, ending before n, n entered by user")
     var number = window.prompt("Enter a number: ");
     if (!isNaN(number)){
         if (parseInt(number,10) < 3){
@@ -59,7 +64,7 @@ function cau_c(){
             return cau_c();
         }
         else{
-            for(var i = 0; i < number; i++){
+            for(var i = 3; i < number; i++){
                 console.log(i)
             }
         }
@@ -71,6 +76,8 @@ function cau_c(){
 }
 //d. A sequence of numbers, starting from c, ending before n, c and n entered by user
 function cau_d(){
+    console.clear();
+    alert("A sequence of numbers, starting from c, ending before n, c and n entered by user");
     var c = window.prompt("Enter starting number: ");
     var n = window.prompt("Enter ending number: ");
     if (!isNaN(c) & !isNaN(n)){
@@ -91,6 +98,8 @@ function cau_d(){
 }
 // e. A sequence of numbers, starting from c, ending before n, stepping by 3, c and n entered by user
 function cau_e(){
+    console.clear();
+    alert("A sequence of numbers, starting from c, ending before n, stepping by 3, c and n entered by user")
     var c = window.prompt("Enter starting number: ");
     var n = window.prompt("Enter ending number: ");
 
@@ -114,6 +123,8 @@ function cau_e(){
 }
 // f. A sequence of numbers, starting from c, ending before n, stepping by s. c, n and s entered by user
 function cau_f(){
+    console.clear();
+    alert("A sequence of numbers, starting from c, ending before n, stepping by s. c, n and s entered by user")
     var c = window.prompt("Enter starting number: ");
     var n = window.prompt("Enter ending number: ");
     var s = window.prompt("Enter stepping number: ");
@@ -141,6 +152,8 @@ function cau_f(){
 
 //4. Write a program to calculate the factorial of n: (1 * 2 * 3 *... *n), n enter by user
 function cau_4(){
+    console.clear();
+    alert("Write a program to calculate the factorial of n: (1 * 2 * 3 *... *n), n enter by user")
     var n = window.prompt("Enter a number");
     var answer = 1;
     if (!isNaN(n)){
@@ -162,6 +175,8 @@ function cau_4(){
 }
 //5. Write a program asking users their age, and then decide if they are old enough to view a 14+ content
 function cau_5(){
+    console.clear();
+    alert("Write a program asking users their age, and then decide if they are old enough to view a 14+ content");
     var n = window.prompt("Enter a number");
     if (!isNaN(n)){
         n = parseInt(n);
@@ -179,6 +194,8 @@ function cau_5(){
 }
 // 6. Write a program asking user to enter a number, x, then check if x is in the lower half or higher half of 0 - 9 range
 function cau_6(){
+    console.clear();
+    alert("Write a program asking user to enter a number, x, then check if x is in the lower half or higher half of 0 - 9 range");
     var n = window.prompt("Enter a number from 0 to 9");
     if(isNaN(n)){
         alert("You should write a number!")
@@ -192,6 +209,8 @@ function cau_6(){
 }
 // 7. Write a program asking user to enter two numbers, x and n, then check if x is in lower half or higher half of n
 function cau_7(){
+    console.clear();
+    alert("Write a program asking user to enter two numbers, x and n, then check if x is in lower half or higher half of n")
     var n = window.prompt("Enter a number: ");
     var x = window.prompt("Enter x: ");
     if(isNaN(n) | isNaN(x)){
@@ -207,6 +226,8 @@ function cau_7(){
 }
 // 8. Write a script to check if a number is even (divisible by 2) or odd number
 function cau_8(){
+    console.clear();
+    alert("Write a script to check if a number is even (divisible by 2) or odd number")
     var n = window.prompt("Enter a number");
     if(isNaN(n)){
         alert("You should write a number!")
@@ -222,6 +243,8 @@ function cau_8(){
 // a. 6 L’s and H’s, half L’s, half H’s (L means low, H means high) (CHIU)
 // b. n L’s and H’s in total, n entered by user (CHIU)
 function cau_9d(){
+    console.clear();
+    alert("Print out sequence 0,1,0,1,... has n numbers, n inputed by user")
     var n = window.prompt("Enter a number");
     if(isNaN(n)){
         alert("You should write a number!")
@@ -242,6 +265,8 @@ function cau_9d(){
 // ● Overweight if BMI is between 25 and 30
 // ● Obese if BMI is more than 30
 function cau_10(){
+    console.clear();
+    alert("BMI calculator")
     var w = window.prompt("Enter your weight (kg):");
     var h = window.prompt("Enter your height (m):");
     if(isNaN(w) | isNaN(h)){
