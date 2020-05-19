@@ -38,7 +38,7 @@ function testThreeDot(){
 // testThreeDot();
 
 // 4. Write a script to simulate a clothes shop, asking and performing certain tasks from users
-
+ 
 let items = ['Phi Yến','Hiền Nhi','Thảo baby'];
 function simulate(){
     // console.clear();
