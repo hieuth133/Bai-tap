@@ -27,9 +27,10 @@ let {subject, dueDate, assignTo} = task;
 // console.log(subject);
 
 // 3.
-function jobSearchFunction(){
-console.clear();
-const jobSearch = {
+function jobSearchFunction()
+{
+    console.clear();
+    const jobSearch = {
         hits: [
             {
                 benefits: [
@@ -963,12 +964,143 @@ const jobSearch = {
 
     console.log(`type of the outer most layer (jobSearch) is: ${typeof jobSearch}`);
     console.log(`The Hits properties where the job results are stores: ${typeof jobSearch.hits} `);
-    console.log(jobSearch.hits);
+    // console.log(jobSearch.hits[0]);
 
+    let {jobTitle, locations, salaryMax,salaryMin,benefits,skills,jobRequirement} = jobSearch.hits[0];
+
+    console.log(jobTitle, locations, salaryMax,salaryMin,benefits,skills,jobRequirement);
     // // let {hits} = jobSearch;
     // for (let i  = 0; i < jobSearch.hits.length; i ++){
     //     let {jobTitle,locations,jobSalary,benefits,skills,jobRequirement } = jobSearch.hits[i];
     //     // console.log(jobSearch.hits[i]);
     //     console.log(benefits)
+    
+}
+
+//bai 4
+let dictBai4 = {
+    debug: 'The process of figuring out why your program has a certain error and how to fix it',
+    done: 'When your task is complete, the only thing you have to do is to wait for users to use it (no additional codes or actions needed)',
+    defect: 'The formal word for ‘error’',
+    pm: 'The short version of Project Manager, the person in charge of the final result of a project',
+    "ui/ux": 'UI means User Interface, UX mean User Experience, are the process to define how your products looks and feels'
+};
+function bai4(){
+    
+    // console.log(dict);
+    alert('Hi there, this is a dictionary.');
+    let word = window.prompt('Enter a keyword');
+    if (word === ''){alert('dm ngu');}
+    else if (word in dictBai4){
+        alert(dictBai4[word]);
+    }
+    else if(word === 'print'){console.log(dictBai4);}
+    else{dictBai4[word]=window.prompt(`We couldnot find your word: ${word}, leave your explanation`);   }
+    
+}
+
+//bai 5
+let products = [
+    {Name: 'Xiaomi portable charger 20000mah', Brand: 'Xiaomi', Price: 428, Color: 'White', Category: 'Charger'},
+    {Name: 'VSmart Active 1', Brand: 'VSmart', Price: 5487, Color: 'Black',Category:'Phone'},
+    {Name: 'Iphone X',Brand:'Iphone',Price:'21490',Color:'Gray',Category:'Phone'},
+    {Name: 'Samsung Galaxy A9', Brand:'Samsung',Price:8490,Color:'Blue',Category:'Phone'}
+];
+
+function bai5_1(){
+    for (var i = 0; i < products.length; i++) {
+        console.log(`#${i}. Name: ${products[i]['Name']} \nPrice: ${products[i].Price}`);
+        console.log('----------------------');
+    }
+}
+function bai5_2(){
+    let number = Number(window.prompt('Enter a product position: '));
+    if (number >= products.length){alert('Out of range')}
+    else{
+        console.clear();
+        let {Name,Brand,Price,Color,Category} = products[number]
+        console.log(`Name: ${Name}\nBrand: ${Brand}\nPrice: ${Price}\nColor: ${Color}\nCategory: ${Category}`);
+    }
+}
+function bai5_3(){
+    let inputCategory = window.prompt('Enter your category');
+    console.clear()
+    for (var i = 0; i < products.length; i++){
+        if(inputCategory.toLowerCase() == products[i].Category.toLowerCase()){
+            console.log(`Name: ${products[i].Name}\nPrice: ${products[i].Price}`);
+            console.log(`-------------------------------`);
+        }
+    }
+}
+function bai5_4_5(){
+    products[0]['Providers'] = ['Phukienzero','Dientuccc'];
+    products[1]['Providers'] = ['Tgdd','Ddghn','VhStore'];
+    products[2]['Providers'] = ['Tgdd'];
+    products[3]['Providers'] = ['Tgdd'];
+
+    for (var i = 0; i < products.length; i++){
+        var {Name,Price,Providers} = products[i];
+        console.log(`#${i+1}.${Name}\n   Price: ${Price}\n   Providers: ${Providers}`);
+    }
+    inputProviders = window.prompt('Enter a provider:');
+    console.clear();
+    for (var i = 0; i < products.length; i++){
+        for (var j = 0; j <products[i].Providers.length; j++){
+            if (inputProviders.toLowerCase() == products[i].Providers[j].toLowerCase()){
+                console.log(`Name: ${products[i].Name}\nBrand: ${products[i].Brand}\nPrice: ${products[i].Price}\nColor: ${products[i].Color}\nCategory: ${products[i].Category}\nProviders: ${products[i].Providers}`)
+            }
+        }
+    }
+}
+
+//bai 6
+let tasks = [
+    {name: 'HTML', complete: false},
+    {name: 'CSS', complete: false},
+    {name: 'Basis of JavaScript', complete: false},
+    {name: 'Package manager (npm)', complete: false},
+    {name: 'Git', complete: false},
+    // {name: 'ReactJS', complete: false},
+];
+function showComplete(complete){
+    let fig;
+    if (complete == false){fig = '[ ]';}
+    else{fig = '[x]';}
+    return fig;
+}
+function showTasks(tasks){
+    for (var i = 0; i < tasks.length; i ++){
+        console.log(`${showComplete(tasks[i].complete)} ${tasks[i].name}\n`)
+    }
+}
+showTasks(tasks);
+function bai_6(){
+    console.clear();
+    console.log('Hi there, this is your learing tasks to front-end developer career.');
+    let inputCommand, newInputTask,newTask,inputPosition,inputUpdateTitle;
+
+    inputCommand = window.prompt('Enter your command (New, Complete, Update, Delete)').toLowerCase();
+    
+    if (inputCommand === 'new'){
+        newInputTask = window.prompt('Enter new task: ');
+        newTask = {name: newInputTask, complete: false};
+        tasks.push(newTask);
+        showTasks(tasks);
+    }
+    else if (inputCommand === 'update'){
+        inputPosition = Number(window.prompt('Enter position:'));
+        inputUpdateTitle = window.prompt('Enter new title:');
+        tasks[inputPosition-1].name = inputUpdateTitle;
+        showTasks(tasks);
+    }
+    else if (inputCommand === 'complete'){
+        inputPosition = Number(window.prompt('Enter position:'));
+        tasks[inputPosition-1].complete = true;
+        showTasks(tasks);
+    }
+    else if (inputCommand === 'delete'){
+        inputPosition = Number(window.prompt('Enter position:'));
+        tasks.splice(inputPosition-1,1);
+        showTasks(tasks);
     }
 }
